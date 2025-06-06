@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Greet the person
-        run: echo "Hello, ${{ inputs.name }}!"
+        run: echo "Hello---1--, ${{ inputs.name }}!"
         
       - name: Run hello world script
         run: python ${{ inputs.script_path }}
