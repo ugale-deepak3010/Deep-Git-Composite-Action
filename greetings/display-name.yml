@@ -1,5 +1,6 @@
 name: Greeting Template
 
+
 on:
   workflow_call:
     inputs:
@@ -7,10 +8,23 @@ on:
         required: true
         type: string
         description: 'The name of the person to greet'
+      script_path:
+        required: true
+        type: string
+        description: 'The path to the python script'
 
 jobs:
   greeting_job:
     runs-on: ubuntu-latest
     steps:
       - name: Greet the person
-        run: echo "Hello, ${{ inputs.name }}!"
+        run: echo "Hello---1--, ${{ inputs.name }}!"
+
+      - name: Install tree and display file tree
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tree
+          tree
+        
+      - name: Run hello world script
+        run: python ${{ inputs.script_path }}
