@@ -1,5 +1,4 @@
-ame: Use Greeting Composite
-
+name: Use Greeting Composite
 on:
   workflow_dispatch:
     inputs:
@@ -11,7 +10,6 @@ on:
         description: 'The path to the python script'
         required: true
         type: string
-
 jobs:
   call-greeting-composite:
     runs-on: ubuntu-latest
