@@ -14,3 +14,6 @@ jobs:
     steps:
       - name: Greet the person
         run: echo "Hello, ${{ inputs.name }}!"
+        
+      - name: Run hello world script
+        run: python path/to/your_hello_world.py
