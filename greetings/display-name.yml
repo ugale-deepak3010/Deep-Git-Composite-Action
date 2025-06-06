@@ -1,30 +1,29 @@
 name: Greeting Template
+description: 'A composite action that greets a person and runs a script'
 
+inputs:
+  name:
+    description: 'The name of the person to greet'
+    required: true
+    default: ''
+  script_path:
+    description: 'The path to the python script'
+    required: true
+    default: ''
+runs:
+  using: "composite"
+  steps:
+    - name: Greet the person
+      run: echo "Hello---1--, ${{ inputs.name }}!"
+      shell: bash
 
-on:
-  workflow_call:
-    inputs:
-      name:
-        required: true
-        type: string
-        description: 'The name of the person to greet'
-      script_path:
-        required: true
-        type: string
-        description: 'The path to the python script'
+    - name: Install tree and display file tree
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y tree
+        tree
+      shell: bash
 
-jobs:
-  greeting_job:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Greet the person
-        run: echo "Hello---1--, ${{ inputs.name }}!"
-
-      - name: Install tree and display file tree
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y tree
-          tree
-        
-      - name: Run hello world script
-        run: python ${{ inputs.script_path }}
+    - name: Run hello world script
+      run: python ${{ inputs.script_path }}
+      shell: bash
