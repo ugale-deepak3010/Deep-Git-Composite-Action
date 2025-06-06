@@ -7,6 +7,10 @@ on:
         required: true
         type: string
         description: 'The name of the person to greet'
+      script_path:
+        required: true
+        type: string
+        description: 'The path to the python script'
 
 jobs:
   greeting_job:
@@ -16,4 +20,4 @@ jobs:
         run: echo "Hello, ${{ inputs.name }}!"
         
       - name: Run hello world script
-        run: python path/to/your_hello_world.py
+        run: python ${{ inputs.script_path }}
