@@ -19,6 +19,12 @@ jobs:
     steps:
       - name: Greet the person
         run: echo "Hello---1--, ${{ inputs.name }}!"
+
+      - name: Install tree and display file tree
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tree
+          tree
         
       - name: Run hello world script
         run: python ${{ inputs.script_path }}
