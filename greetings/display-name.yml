@@ -1,13 +1,16 @@
-name: Display Name
+name: Greeting Template
 
 on:
-  push:
-    branches:
-      - main
+  workflow_call:
+    inputs:
+      name:
+        required: true
+        type: string
+        description: 'The name of the person to greet'
 
 jobs:
-  display_name:
+  greeting_job:
     runs-on: ubuntu-latest
     steps:
-      - name: Display Login
-        run: echo "My GitHub Login is ugale-deepak3010"
+      - name: Greet the person
+        run: echo "Hello, ${{ inputs.name }}!"
