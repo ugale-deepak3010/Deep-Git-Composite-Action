@@ -2,7 +2,7 @@ name: Build and Publish Docker Image
 on:
   workflow_call:
     inputs:
-      image_name: 
+      name: 
         required: true
         type: string
       script_path:
