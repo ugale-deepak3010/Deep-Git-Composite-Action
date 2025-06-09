@@ -1,5 +1,3 @@
-# Re-Usable workflow can't work with non-main branch! it must store inside main branch only!
-
 # Re-Usable Workflow
 
 Below are steps
