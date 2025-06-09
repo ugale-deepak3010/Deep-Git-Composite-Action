@@ -1,0 +1,32 @@
+name: Build and Publish Docker Image
+on:
+  workflow_call:
+    inputs:
+      image_name: 
+        required: true
+        type: string
+      script_path:
+        required: true
+        type: string
+    secrets:
+      password:
+        required: true
+jobs:
+  build: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Greet the person
+        run: echo "Hello---1--, ${{ inputs.name }}!"
+        shell: bash
+
+      - name: Install tree and display file tree
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tree
+          tree
+        shell: bash
+
+      - name: Run hello world script
+        run: python ${{ inputs.script_path }}
+        shell: bash
+      
