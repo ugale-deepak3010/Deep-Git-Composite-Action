@@ -32,4 +32,7 @@ jobs:
         run: python ${{ inputs.script_path }}
         shell: bash
 
+      - name: call another workflow
+        uses: ugale-deepak3010/multiple-workflow-test/.github/workflows/simple.yml@v1
+
         
