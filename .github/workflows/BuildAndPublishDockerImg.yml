@@ -12,6 +12,11 @@ on:
       password:
         required: true
 jobs:
+  another_job:
+   runs-on: ubuntu-latest
+   steps:
+     uses: ugale-deepak3010/multiple-workflow-test/.github/workflows/simple.yml@main
+    
   build: 
     runs-on: ubuntu-latest
     steps:
@@ -21,8 +26,8 @@ jobs:
         run: echo "Hello---1--, ${{ inputs.name }}!"
         shell: bash
 
-      - name: try to access
-        uses: ugale-deepak3010/multiple-workflow-test/.github/workflows/simple.yml@main
+      #- name: try to access
+      #  uses: ugale-deepak3010/multiple-workflow-test/.github/workflows/simple.yml@main
 
       - name: Install tree and display file tree
         run: |
