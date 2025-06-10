@@ -17,9 +17,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Greet the person
+      - name: Greet the personxxx
         run: echo "Hello---1--, ${{ inputs.name }}!"
         shell: bash
+
+      - name: try to access
+        uses: ugale-deepak3010/multiple-workflow-test/.github/workflows/.github/workflows/simple.yml@main
 
       - name: Install tree and display file tree
         run: |
@@ -32,8 +35,7 @@ jobs:
         run: python ${{ inputs.script_path }}
         shell: bash
 
-      - name: try to access
-        uses: ugale-deepak3010/multiple-workflow-test/.github/workflows/.github/workflows/simple.yml@main
+      
 
 
         
