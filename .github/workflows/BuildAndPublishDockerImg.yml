@@ -22,7 +22,7 @@ jobs:
         shell: bash
 
       - name: try to access
-        uses: ugale-deepak3010/multiple-workflow-test/.github/workflows/.github/workflows/simple.yml@main
+        uses: ugale-deepak3010/multiple-workflow-test/.github/workflows/simple.yml@main
 
       - name: Install tree and display file tree
         run: |
