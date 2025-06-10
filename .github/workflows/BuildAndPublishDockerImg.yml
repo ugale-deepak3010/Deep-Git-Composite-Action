@@ -13,9 +13,7 @@ on:
         required: true
 jobs:
   another_job:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: ugale-deepak3010/multiple-workflow-test/.github/workflows/simple.yml@main
+    uses: ugale-deepak3010/multiple-workflow-test/.github/workflows/simple.yml@main
     
   build: 
     runs-on: ubuntu-latest
